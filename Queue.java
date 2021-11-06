@@ -7,10 +7,31 @@ class Queue {
         obj.enque(arr, 2);
         obj.enque(arr, 3);
         obj.enque(arr, 4);
-        System.out.println("Deque elelment is " + obj.deque(arr));
-        System.out.println("Deque elelment is " + obj.deque(arr));
-        System.out.println("Deque elelment is " + obj.deque(arr));
-        System.out.println("Deque elelment is " + obj.deque(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        obj.enque(arr, 12);
+        obj.enque(arr, 34);
+        obj.enque(arr, 90);
+        obj.enque(arr, 15);
+        obj.enque(arr, 14);
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+        System.out.println("dequeue elelment is " + obj.dequeue(arr));
+
+        // <--------------- In this case Queue is Empty but Both statements executabl ------------------->
+        // <-----------This is the Drawback of Linear Queue --------------->
+
+        if (obj.isEmpty()) {
+            System.out.println("Queue is Empty");
+        }
+        if (obj.isFull(arr)) {
+            System.out.println("Queue is Full");
+        }
     }
 }
 
@@ -43,7 +64,7 @@ class QueueOperations {
         }
     }
 
-    int deque(int arr[]) {
+    int dequeue(int arr[]) {
         int temp = -1;
         if (!isEmpty()) {
             front++;

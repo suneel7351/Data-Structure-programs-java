@@ -1,10 +1,15 @@
-class InsertLLBtw {
+class DeleteLLBeginning {
     public static void main(String[] args) {
-
         LinkList obj = new LinkList();
-        obj.insert(92, 3);
+        System.out.println("Before Deleting LinkList");
         obj.display();
+        System.out.println("After Deleting LinkList");
+        obj.delete();
+        obj.display();
+        System.out.println(obj.head);
+
     }
+
 }
 
 class Node {
@@ -18,35 +23,26 @@ class LinkList {
     Node third = new Node();
     Node fourth = new Node();
     Node fifth = new Node();
-    Node sixth = new Node();
 
     LinkList() {
-        head.data = 12;
+        head.data = 5;
         head.next = second;
-        second.data = 19;
+        second.data = 2;
         second.next = third;
-        third.data = 67;
+        third.data = 4;
         third.next = fourth;
-        fourth.data = 14;
+        fourth.data = 9;
         fourth.next = fifth;
-        fifth.data = 56;
-        fifth.next = sixth;
-        sixth.data = 36;
-        sixth.next = null;
+        fifth.data = 8;
+        fifth.next = null;
     }
 
-    void insert(int element, int index) {
-        Node insert = new Node();
-        Node temp = new Node();
-        temp = head;
-        int i = 0;
-        while (i != index - 1) {
-            temp = temp.next;
-            i++;
+    void delete() {
+        if (head != null) {
+            Node temp = head;
+            head = head.next;
+            temp = null;
         }
-        insert.data = element;
-        insert.next = temp.next;
-        temp.next = insert;
     }
 
     void display() {
