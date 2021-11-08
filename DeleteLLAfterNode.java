@@ -1,14 +1,12 @@
-class DeleteLLBeginning {
+class DeleteLLAfterNode {
     public static void main(String[] args) {
         LinkList obj = new LinkList();
-        System.out.println("Before Deleting LinkList");
+        System.out.println("Before Deleting");
         obj.display();
-        System.out.println("After Deleting LinkList");
-        obj.delete();
+        System.out.println("After Deleting");
+        obj.delete(obj.fourth);
         obj.display();
-
     }
-
 }
 
 class Node {
@@ -26,29 +24,33 @@ class LinkList {
     Node seventh = new Node();
 
     LinkList() {
-        head.data = 5;
+        head.data = 2;
         head.next = second;
-        second.data = 2;
+        second.data = 3;
         second.next = third;
         third.data = 4;
         third.next = fourth;
-        fourth.data = 9;
+        fourth.data = 5;
         fourth.next = fifth;
-        fifth.data = 8;
+        fifth.data = 6;
         fifth.next = sixth;
-        sixth.data = 12;
+        sixth.data = 7;
         sixth.next = seventh;
-        seventh.data = 14;
+        seventh.data = 8;
         seventh.next = null;
     }
 
-    void delete() {
+    void delete(Node previousNode) {
         if (head == null) {
             System.out.println("LinkList is Empty");
         } else {
-            Node temp = head;
-            head = head.next;
-            temp = null;
+            Node q = head;
+            while (previousNode.next != q) {
+                q = q.next;
+            }
+            previousNode.next = q.next;
+            q = null;
+
         }
     }
 

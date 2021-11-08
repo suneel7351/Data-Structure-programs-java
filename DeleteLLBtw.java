@@ -1,14 +1,12 @@
-class DeleteLLBeginning {
+class DeleteLLBtw {
     public static void main(String[] args) {
         LinkList obj = new LinkList();
-        System.out.println("Before Deleting LinkList");
+        System.out.println("Before Deleting");
         obj.display();
-        System.out.println("After Deleting LinkList");
-        obj.delete();
+        System.out.println("After Deleting");
+        obj.delete(1);
         obj.display();
-
     }
-
 }
 
 class Node {
@@ -23,32 +21,42 @@ class LinkList {
     Node fourth = new Node();
     Node fifth = new Node();
     Node sixth = new Node();
-    Node seventh = new Node();
 
     LinkList() {
-        head.data = 5;
+        head.data = 9;
         head.next = second;
-        second.data = 2;
+        second.data = 4;
         second.next = third;
-        third.data = 4;
+        third.data = 3;
         third.next = fourth;
-        fourth.data = 9;
+        fourth.data = 2;
         fourth.next = fifth;
-        fifth.data = 8;
+        fifth.data = 1;
         fifth.next = sixth;
         sixth.data = 12;
-        sixth.next = seventh;
-        seventh.data = 14;
-        seventh.next = null;
+        sixth.next = null;
     }
 
-    void delete() {
+    void delete(int index) {
         if (head == null) {
             System.out.println("LinkList is Empty");
         } else {
-            Node temp = head;
-            head = head.next;
-            temp = null;
+            if (index != 0) {
+                Node temp = head;
+                Node q = head.next;
+                int i = 0;
+                while (i != index - 1) {
+                    temp = temp.next;
+                    q = q.next;
+                    i++;
+                }
+                temp.next = q.next;
+                q = null;
+            } else {
+                Node temp = head;
+                head = head.next;
+                temp = null;
+            }
         }
     }
 
