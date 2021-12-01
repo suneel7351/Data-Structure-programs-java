@@ -21,11 +21,16 @@ class LinkListCreationTraversal {
         sixth.next = seventh;
         seventh.data = 67;
         seventh.next = null;
-        while (head != null) {
-            System.out.println("Element : " + head.data);
-            head = head.next;
+        if (head == null) {
+            System.out.println("LinkList is empty");
+        } else {
+            while (head != null) {
+                System.out.println("Element : " + head.data);
+                head = head.next;
+            }
         }
     }
+
 }
 
 class Node {
